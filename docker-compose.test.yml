@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+  test:
+    build: .
+    command: python3 manage.py test
+    depends_on:
+      - db
